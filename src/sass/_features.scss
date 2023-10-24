@@ -1,0 +1,118 @@
+.tabs {
+  list-style: none;
+  width: fit-content;
+  margin-inline: auto;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6rem;
+
+  @media (max-width: 50em) {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__tab {
+    color: $clr-neutral-400;
+    font-size: 1.8rem;
+    font-weight: $fw-semi-bold;
+    padding: 1.6rem 6rem;
+
+    position: relative;
+    border-bottom: 0.1rem solid $clr-neutral-400;
+    transition: color 0.3s;
+
+    @media (max-width: 50em) {
+      padding-inline: 0;
+      // padding-inline: 3.2rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0.3rem;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      transform-origin: right;
+      transition: all 0.3s;
+
+      @media (max-width: 50em) {
+        transform: translateX(50%);
+      }
+    }
+
+    &:hover {
+      color: $clr-accent;
+      cursor: pointer;
+    }
+
+    &--active {
+      color: $clr-primary-dark;
+      &::after {
+        width: 100%;
+        transform-origin: left;
+        background-color: $clr-accent;
+
+        @media (max-width: 50em) {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9rem;
+
+    &--active {
+      display: grid;
+    }
+
+    @media (max-width: 50em) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img-box {
+    position: relative;
+
+    &::after {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      display: block;
+      width: 150%;
+      height: 95%;
+      border-radius: 0 15rem 15rem 0;
+      background-color: $clr-primary-light;
+      z-index: -1;
+
+      inset: 0;
+      transform: translate(-45%, 20%);
+    }
+
+    img {
+      width: 100%;
+      margin-inline: auto;
+      display: block;
+
+      @media (max-width: 50em) {
+        width: 80%;
+      }
+    }
+  }
+
+  &__content {
+    margin: auto;
+
+    @media (max-width: 50em) {
+      text-align: center;
+    }
+  }
+}

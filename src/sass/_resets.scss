@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @media (max-width: 40em) {
+    font-size: 56.25%;
+  }
+}
+
+body {
+  font-family: $ff-body;
+  color: $clr-neutral-400;
+  line-height: $lineH-body;
+  overflow-x: hidden;
+  position: relative;
+}
+
+header {
+  padding-inline: 2.4rem;
+}
+
+section:first-child {
+  padding-top: 6rem;
+}
+
+section {
+  padding-bottom: 16rem;
+  padding-inline: 3.2rem;
+}
+
+section:last-child {
+  margin-bottom: 30rem;
+}
+
+button {
+  cursor: pointer;
+}

@@ -1,0 +1,132 @@
+/*########### SECTIONS WRAPPER ###########*/
+.container {
+  max-width: 124rem;
+  margin-inline: auto;
+
+  &-sm {
+    @extend .container;
+    max-width: 50rem;
+  }
+}
+
+/*########### BUTTONS ###########*/
+%btn {
+  display: inline-block;
+  background: none;
+  border: 0;
+  font-size: $fs-text;
+  padding: 1.2rem 2rem;
+  text-decoration: none;
+  font-weight: $fw-semi-bold;
+  border: 0.2rem solid transparent;
+  border-radius: 3px;
+  transition: all 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $clr-neutral-100;
+  }
+}
+
+.btn {
+  &__cta {
+    @extend %btn;
+    background-color: $clr-primary-light;
+    color: $clr-neutral-100;
+    &:hover {
+      border-color: $clr-primary-light;
+      color: $clr-primary-light;
+    }
+  }
+
+  &__cta[data-inverted] {
+    background-color: #eee;
+    color: $clr-primary-dark;
+
+    &:hover {
+      background-color: $clr-neutral-100;
+      border-color: $clr-primary-dark;
+    }
+  }
+
+  &__cta[data-action] {
+    background-color: $clr-accent;
+    color: $clr-neutral-100;
+
+    &:hover {
+      background-color: $clr-neutral-100;
+      border-color: $clr-accent;
+      color: $clr-accent;
+    }
+  }
+}
+
+/*########### HEADINGS ###########*/
+.heading {
+  color: $clr-primary-dark;
+  font-weight: $fw-super-bold;
+  margin-bottom: 2rem;
+  line-height: $lineH-heading;
+
+  &__primary {
+    @extend .heading;
+    font-size: $fs-heading;
+  }
+
+  &__secondary {
+    @extend .heading;
+    font-size: $fs-sub-heading;
+  }
+
+  &__secondary[data-inverted] {
+    color: $clr-neutral-100;
+  }
+}
+
+/*########### TEXTS ###########*/
+.paragraph {
+  font-size: $fs-text;
+  font-weight: $fw-semi-bold;
+  line-height: $lineH-text;
+  margin-bottom: 2.4rem;
+}
+
+section {
+  .description {
+    text-align: center;
+
+    .paragraph {
+      max-width: 50ch;
+      margin-inline: auto;
+      margin-bottom: 6rem;
+    }
+  }
+}
+
+.btn__nav {
+  border: 0;
+  height: 4rem;
+  background: palegoldenrod;
+  position: relative;
+  display: none;
+
+  @media (max-width: 50em) {
+    display: block;
+  }
+
+  svg {
+    position: absolute;
+    right: 50%;
+    transform: translate(0, -50%);
+  }
+
+  .icon--close {
+    display: none;
+  }
+}
+
+// @media (max-width: 50em) {
+//   .icon--open {
+//     display: ;
+//   }
+// }
